@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "192880005208",
+    "project_id": "practicejp-eb32c",
+    "storage_bucket": "practicejp-eb32c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192880005208:android:ccdd597cfbb6ddcade3a2d",
+        "android_client_info": {
+          "package_name": "com.example.gtk_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192880005208-bhvsltjsn5nanut43mibvkgh0i5oh5vu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK5mUJ_pC6jfcSN43V5He6qcdxCFr54t4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "192880005208-bhvsltjsn5nanut43mibvkgh0i5oh5vu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192880005208:android:8a8cb1c15186f161de3a2d",
+        "android_client_info": {
+          "package_name": "com.teamsix.policy_voter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192880005208-bhvsltjsn5nanut43mibvkgh0i5oh5vu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK5mUJ_pC6jfcSN43V5He6qcdxCFr54t4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "192880005208-bhvsltjsn5nanut43mibvkgh0i5oh5vu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
