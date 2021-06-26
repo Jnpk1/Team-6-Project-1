@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:policy_voter/Home/wrapper.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Wrapper());
 }
 
 class MyApp extends StatelessWidget {
