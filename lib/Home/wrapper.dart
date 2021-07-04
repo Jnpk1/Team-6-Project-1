@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:policy_voter/Authenticity/authService.dart';
 import 'package:policy_voter/Authenticity/signin.dart';
 
 class Wrapper extends StatelessWidget {
@@ -6,6 +8,6 @@ class Wrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: signin());
+    return MaterialApp(home: AuthService());
   }
 }

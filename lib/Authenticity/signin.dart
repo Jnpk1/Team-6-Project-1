@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:policy_voter/Authentication/auth.dart';
 import 'package:policy_voter/Authenticity/signup.dart';
 
 class signin extends StatefulWidget {
@@ -9,6 +10,7 @@ class signin extends StatefulWidget {
 }
 
 class _signinState extends State<signin> {
+  final AuthenticateService _auth = AuthenticateService();
   //To hold the email and passwaord inputs
   String email = "";
   String password = "";
@@ -59,6 +61,18 @@ class _signinState extends State<signin> {
                     onPressed: () async {
                       print(email);
                       print(password);
+                    }),
+                ElevatedButton(
+                    child: Text('Sign in Anon'),
+                    style: TextButton.styleFrom(primary: Colors.green[100]),
+                    onPressed: () async {
+                      dynamic result = await _auth.anonSign();
+                      if (result == null) {
+                        print("error signing in");
+                      } else {
+                        print("signed in");
+                        print(result);
+                      }
                     })
               ],
             ),
