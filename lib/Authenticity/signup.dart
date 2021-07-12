@@ -57,6 +57,7 @@ class _signupState extends State<signup> {
                       if (_formKey.currentState!.validate()) {
                         dynamic result =
                             await _auth.registerAccount(email, password);
+
                         if (result == null) {
                           setState(() => error = 'Invalid Account Creation');
                         }

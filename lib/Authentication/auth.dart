@@ -7,12 +7,12 @@ class AuthenticateService {
     return _auth.authStateChanges();
   }
 
-//anonymous sign in
-  Future anonSign() async {
+  Future signInAccount(String email, String password) async {
     try {
-      UserCredential logInStatus = await _auth.signInAnonymously();
-      User loggedInUser = logInStatus.user as User;
-      return loggedInUser;
+      UserCredential signedInUserCred = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      User signedInUser = signedInUserCred.user as User;
+      return signedInUser;
     } catch (e) {
       print(e.toString());
       return null;
