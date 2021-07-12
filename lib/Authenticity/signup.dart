@@ -60,6 +60,8 @@ class _signupState extends State<signup> {
 
                         if (result == null) {
                           setState(() => error = 'Invalid Account Creation');
+                        } else {
+                          Navigator.pop(context);
                         }
                       }
                     }),
