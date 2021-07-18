@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'policyObject.dart';
 
@@ -36,6 +37,9 @@ class PolicyTile extends StatelessWidget {
                       size: 35,
                     ),
                     onPressed: () {
+                      CollectionReference policies = FirebaseFirestore.instance.collection('Policies');
+                      DocumentReference testdoc = policies.doc(policy.title);
+                      testdoc.update({'votesYes' : policy.votesYes + 1});
                       print('voted Yes');
                     },
                     color: Colors.green),
@@ -45,6 +49,9 @@ class PolicyTile extends StatelessWidget {
                       size: 35,
                     ),
                     onPressed: () {
+                      CollectionReference policies = FirebaseFirestore.instance.collection('Policies');
+                      DocumentReference testdoc = policies.doc(policy.title);
+                      testdoc.update({'votesNo' : policy.votesNo + 1});
                       print('voted No');
                     },
                     color: Colors.red)

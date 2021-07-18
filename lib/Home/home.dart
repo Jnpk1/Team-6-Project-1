@@ -30,6 +30,8 @@ class Home extends StatelessWidget {
                     label: Text('logout')),
               ],
             ),
-            body: Policies()));
+            body: Policies()
+            )
+            );
   }
 }
