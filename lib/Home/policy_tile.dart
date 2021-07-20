@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'policyObject.dart';
@@ -6,7 +8,7 @@ class PolicyTile extends StatelessWidget {
   final Policy policy;
   PolicyTile({required this.policy});
   Color x = Colors.blue;
-
+  
   @override
   Widget build(BuildContext context) {
     if (policy.votesNo > policy.votesYes) {
@@ -36,11 +38,11 @@ class PolicyTile extends StatelessWidget {
                       Icons.check,
                       size: 35,
                     ),
-                    onPressed: () {
+                    onPressed: policy.desc.contains('(Thank you! Your vote has been recorded.)') ? null : () {
                       CollectionReference policies = FirebaseFirestore.instance.collection('Policies');
                       DocumentReference testdoc = policies.doc(policy.title);
                       testdoc.update({'votesYes' : policy.votesYes + 1});
-                      print('voted Yes');
+                      testdoc.update({'desc' : policy.desc + ' (Thank you! Your vote has been recorded.)'});
                     },
                     color: Colors.green),
                 IconButton(
@@ -48,11 +50,11 @@ class PolicyTile extends StatelessWidget {
                       Icons.close,
                       size: 35,
                     ),
-                    onPressed: () {
+                    onPressed: policy.desc.contains('(Thank you! Your vote has been recorded.)') ? null :  () {
                       CollectionReference policies = FirebaseFirestore.instance.collection('Policies');
                       DocumentReference testdoc = policies.doc(policy.title);
                       testdoc.update({'votesNo' : policy.votesNo + 1});
-                      print('voted No');
+                      testdoc.update({'desc' : policy.desc + ' (Thank you! Your vote has been recorded.)'});
                     },
                     color: Colors.red)
               ]),
